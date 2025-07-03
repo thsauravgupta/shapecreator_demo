@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyShapeCreator - Stabl Foundation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__brand">
+                    <div class="logo">
+                        <div class="logo__icon">S</div>
+                        <div class="logo__text">
+                            <span class="logo__foundation">Stabl Foundation</span>
+                            <span class="logo__app">MyShapeCreator</span>
+                        </div>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li><a href="#" class="nav__link active" data-section="home">Home</a></li>
+                        <li><a href="#" class="nav__link" data-section="draw">Draw</a></li>
+                        <li><a href="#" class="nav__link" data-section="quiz">Quiz</a></li>
+                        <li><a href="#" class="nav__link" data-section="dashboard">Dashboard</a></li>
+                        <li><a href="#" class="nav__link" data-section="gallery">Gallery</a></li>
+                        <li><a href="#" class="nav__link" data-section="help">Help</a></li>
+                    </ul>
+                </nav>
+                <div class="header__user">
+                    <button class="btn btn--outline btn--sm">Login</button>
+                    <button class="btn btn--primary btn--sm">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="container">
+                    <div class="hero__content">
+                        <h1 class="hero__title">Create, Learn, Master with MyShapeCreator</h1>
+                        <p class="hero__description">
+                            Transform your understanding of shapes and geometry through interactive drawing and educational quizzes. 
+                            Designed by Stabl Foundation to advance computer science education for K-12 students.
+                        </p>
+                        <div class="hero__actions">
+                            <button class="btn btn--primary btn--lg" data-section="draw">Start Drawing</button>
+                            <button class="btn btn--outline btn--lg" data-section="quiz">Take Quiz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="container">
+                    <div class="features__grid">
+                        <div class="card feature-card" data-section="draw">
+                            <div class="card__body">
+                                <div class="feature-card__icon">🎨</div>
+                                <h3>Start Drawing</h3>
+                                <p>Create shapes with our intuitive drawing tools. Learn geometric principles through hands-on creation.</p>
+                                <button class="btn btn--secondary">Begin Creating</button>
+                            </div>
+                        </div>
+                        <div class="card feature-card" data-section="quiz">
+                            <div class="card__body">
+                                <div class="feature-card__icon">🧠</div>
+                                <h3>Take Quiz</h3>
+                                <p>Test your knowledge of shapes, geometry, and spatial reasoning with interactive challenges.</p>
+                                <button class="btn btn--secondary">Start Quiz</button>
+                            </div>
+                        </div>
+                        <div class="card feature-card" data-section="dashboard">
+                            <div class="card__body">
+                                <div class="feature-card__icon">📊</div>
+                                <h3>View Progress</h3>
+                                <p>Track your learning journey with detailed analytics and achievement badges.</p>
+                                <button class="btn btn--secondary">View Stats</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about">
+                <div class="container">
+                    <div class="about__content">
+                        <h2>Advancing Computer Science Education</h2>
+                        <p>
+                            MyShapeCreator is part of Stabl Foundation's mission to provide quality tools and curricula 
+                            for computer science education. We've reached over 50,000+ students from K-12 to PhD levels, 
+                            making complex concepts accessible through interactive learning.
+                        </p>
+                        <div class="about__stats">
+                            <div class="stat">
+                                <div class="stat__number">50,000+</div>
+                                <div class="stat__label">Students Taught</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat__number">K-12 to PhD</div>
+                                <div class="stat__label">Education Range</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat__number">TEASync</div>
+                                <div class="stat__label">Framework</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Draw Section -->
+        <section id="draw" class="section">
+            <div class="container">
+                <div class="draw-interface">
+                    <div class="tools-panel">
+                        <h3>Drawing Tools</h3>
+                        <div class="tool-group">
+                            <button class="tool-btn active" data-tool="brush">🖌️ Brush</button>
+                            <button class="tool-btn" data-tool="eraser">🧽 Eraser</button>
+                            <button class="tool-btn" data-tool="line">📏 Line</button>
+                        </div>
+                        <div class="tool-group">
+                            <button class="tool-btn" data-tool="circle">⭕ Circle</button>
+                            <button class="tool-btn" data-tool="rectangle">⬜ Rectangle</button>
+                            <button class="tool-btn" data-tool="triangle">🔺 Triangle</button>
+                        </div>
+                        <div class="tool-group">
+                            <label class="form-label">Color</label>
+                            <input type="color" id="colorPicker" value="#21808d" class="color-picker">
+                        </div>
+                        <div class="tool-group">
+                            <label class="form-label">Brush Size</label>
+                            <input type="range" id="brushSize" min="1" max="50" value="5" class="form-control">
+                            <span id="brushSizeValue">5px</span>
+                        </div>
+                        <div class="tool-group">
+                            <button class="btn btn--secondary" id="gridToggle">Toggle Grid</button>
+                            <button class="btn btn--secondary" id="clearCanvas">Clear Canvas</button>
+                        </div>
+                        <div class="tool-group">
+                            <button class="btn btn--primary" id="saveDrawing">Save Drawing</button>
+                            <button class="btn btn--outline" id="undoAction">Undo</button>
+                            <button class="btn btn--outline" id="redoAction">Redo</button>
+                        </div>
+                    </div>
+                    <div class="canvas-container">
+                        <canvas id="drawingCanvas" width="800" height="600"></canvas>
+                        <div class="canvas-overlay" id="canvasOverlay">
+                            <div class="educational-tip">
+                                <h4>💡 Learning Tip</h4>
+                                <p>Try creating basic shapes first. Circles help understand curves, rectangles teach straight lines and angles!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="section">
+            <div class="container">
+                <div class="quiz-interface">
+                    <div class="quiz-header">
+                        <h2>Shape & Geometry Quiz</h2>
+                        <div class="quiz-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="quizProgress"></div>
+                            </div>
+                            <span id="questionCounter">Question 1 of 5</span>
+                        </div>
+                        <div class="quiz-timer" id="timer">Time: 00:30</div>
+                    </div>
+                    <div class="quiz-content">
+                        <div class="question-card" id="questionCard">
+                            <h3 id="questionText">Loading question...</h3>
+                            <div class="options" id="questionOptions">
+                                <!-- Options will be populated by JavaScript -->
+                            </div>
+                            <div class="question-feedback" id="questionFeedback"></div>
+                        </div>
+                        <div class="quiz-actions">
+                            <button class="btn btn--primary" id="submitAnswer" disabled>Submit Answer</button>
+                            <button class="btn btn--secondary" id="nextQuestion" style="display: none;">Next Question</button>
+                        </div>
+                    </div>
+                    <div class="quiz-results" id="quizResults" style="display: none;">
+                        <h3>Quiz Complete!</h3>
+                        <div class="results-summary">
+                            <div class="result-stat">
+                                <span class="result-number" id="finalScore">0</span>
+                                <span class="result-label">Score</span>
+                            </div>
+                            <div class="result-stat">
+                                <span class="result-number" id="correctAnswers">0/5</span>
+                                <span class="result-label">Correct</span>
+                            </div>
+                        </div>
+                        <button class="btn btn--primary" id="retakeQuiz">Retake Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section">
+            <div class="container">
+                <div class="dashboard">
+                    <h2>Your Learning Dashboard</h2>
+                    <div class="dashboard__grid">
+                        <div class="card dashboard-card">
+                            <div class="card__body">
+                                <h3>Progress Overview</h3>
+                                <div class="progress-stats">
+                                    <div class="progress-item">
+                                        <span class="progress-label">Drawings Completed</span>
+                                        <span class="progress-value">12</span>
+                                    </div>
+                                    <div class="progress-item">
+                                        <span class="progress-label">Quiz Average</span>
+                                        <span class="progress-value">85%</span>
+                                    </div>
+                                    <div class="progress-item">
+                                        <span class="progress-label">Time Spent</span>
+                                        <span class="progress-value">4.5 hours</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card dashboard-card">
+                            <div class="card__body">
+                                <h3>Achievements</h3>
+                                <div class="badges">
+                                    <div class="badge earned">🎨 First Drawing</div>
+                                    <div class="badge earned">🧠 Quiz Master</div>
+                                    <div class="badge">⭐ Shape Expert</div>
+                                    <div class="badge">📅 Weekly Warrior</div>
+                                    <div class="badge">🎭 Creative Genius</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card dashboard-card">
+                            <div class="card__body">
+                                <h3>Learning Concepts</h3>
+                                <div class="concepts">
+                                    <div class="concept completed">✓ Basic Shapes and Properties</div>
+                                    <div class="concept completed">✓ Geometric Principles</div>
+                                    <div class="concept in-progress">◐ Spatial Reasoning</div>
+                                    <div class="concept">◯ Pattern Recognition</div>
+                                    <div class="concept">◯ Mathematical Visualization</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card dashboard-card">
+                            <div class="card__body">
+                                <h3>Recent Activity</h3>
+                                <div class="activity-list">
+                                    <div class="activity-item">
+                                        <span class="activity-icon">🎨</span>
+                                        <span class="activity-text">Created "Circle Pattern" drawing</span>
+                                        <span class="activity-time">2 hours ago</span>
+                                    </div>
+                                    <div class="activity-item">
+                                        <span class="activity-icon">🧠</span>
+                                        <span class="activity-text">Completed Geometry Quiz (90%)</span>
+                                        <span class="activity-time">1 day ago</span>
+                                    </div>
+                                    <div class="activity-item">
+                                        <span class="activity-icon">⭐</span>
+                                        <span class="activity-text">Earned "Quiz Master" badge</span>
+                                        <span class="activity-time">2 days ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section">
+            <div class="container">
+                <div class="gallery">
+                    <div class="gallery-header">
+                        <h2>Your Drawing Gallery</h2>
+                        <div class="gallery-controls">
+                            <input type="text" placeholder="Search drawings..." class="form-control search-input" id="gallerySearch">
+                            <select class="form-control" id="galleryFilter">
+                                <option value="all">All Drawings</option>
+                                <option value="recent">Recent</option>
+                                <option value="favorites">Favorites</option>
+                                <option value="shapes">Shapes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="gallery-grid" id="galleryGrid">
+                        <!-- Sample drawings -->
+                        <div class="gallery-item">
+                            <div class="gallery-thumbnail">
+                                <div class="placeholder-drawing">🔴 Circle Study</div>
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Circle Study</h4>
+                                <p>Created 2 hours ago</p>
+                                <div class="gallery-actions">
+                                    <button class="btn btn--sm btn--secondary">Edit</button>
+                                    <button class="btn btn--sm btn--outline">Share</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-thumbnail">
+                                <div class="placeholder-drawing">🔷 Geometric Patterns</div>
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Geometric Patterns</h4>
+                                <p>Created 1 day ago</p>
+                                <div class="gallery-actions">
+                                    <button class="btn btn--sm btn--secondary">Edit</button>
+                                    <button class="btn btn--sm btn--outline">Share</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-thumbnail">
+                                <div class="placeholder-drawing">🔺 Triangle Art</div>
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Triangle Art</h4>
+                                <p>Created 3 days ago</p>
+                                <div class="gallery-actions">
+                                    <button class="btn btn--sm btn--secondary">Edit</button>
+                                    <button class="btn btn--sm btn--outline">Share</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Section -->
+        <section id="help" class="section">
+            <div class="container">
+                <div class="help">
+                    <h2>Help & Tutorials</h2>
+                    <div class="help-grid">
+                        <div class="card help-card">
+                            <div class="card__body">
+                                <h3>Getting Started</h3>
+                                <p>Learn the basics of using MyShapeCreator and navigate through the drawing tools.</p>
+                                <ul>
+                                    <li>Choose your drawing tool from the left panel</li>
+                                    <li>Select colors and brush sizes</li>
+                                    <li>Start creating on the canvas</li>
+                                    <li>Save your work to the gallery</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card help-card">
+                            <div class="card__body">
+                                <h3>Drawing Techniques</h3>
+                                <p>Master the art of digital shape creation with these essential techniques.</p>
+                                <ul>
+                                    <li>Use the grid for precise measurements</li>
+                                    <li>Hold shift while drawing lines for straight edges</li>
+                                    <li>Practice basic shapes before complex designs</li>
+                                    <li>Use different brush sizes for details</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card help-card">
+                            <div class="card__body">
+                                <h3>Educational Goals</h3>
+                                <p>Understand how MyShapeCreator supports learning objectives in STEM education.</p>
+                                <ul>
+                                    <li>Spatial reasoning development</li>
+                                    <li>Geometric principle understanding</li>
+                                    <li>Pattern recognition skills</li>
+                                    <li>Mathematical visualization</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card help-card">
+                            <div class="card__body">
+                                <h3>TEASync Integration</h3>
+                                <p>Advanced users can integrate with TEASync framework for collaborative learning.</p>
+                                <ul>
+                                    <li>Team-based drawing projects</li>
+                                    <li>Teacher dashboard integration</li>
+                                    <li>Progress sharing capabilities</li>
+                                    <li>Curriculum alignment tools</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
